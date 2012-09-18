@@ -12,3 +12,8 @@
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
 #endif
+
+
+
+#define kParseIDApplication @"A9tC1DMT00dVUi7rPqEec8JCxt7vvFr62atRdVJb"
+#define kParseClientKey @"RsmfinS1p65nx7zBPtt5Jss9jRvgDpsA4YlIYwMf"

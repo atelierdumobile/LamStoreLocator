@@ -8,20 +8,22 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "CountriesViewController.h"
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	//Parse init
+	[Parse setApplicationId:kParseIDApplication clientKey:kParseClientKey];
+		
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-	} else {
-	    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
-	}
-	self.window.rootViewController = self.viewController;
+	
+    self.viewController = [[CountriesViewController alloc] init];
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+	self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
