@@ -8,6 +8,7 @@
 
 #import "StoreTableViewCell.h"
 
+
 @implementation StoreTableViewCell
 
 @synthesize pictoImageView = _pictoImageView;
@@ -31,6 +32,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		self.imageView.frame = CGRectMake(4, 4, 94, 67);
+	} else {
+		self.imageView.frame = CGRectMake(10, 10, 141, 100);
+	}
 }
 
 @end

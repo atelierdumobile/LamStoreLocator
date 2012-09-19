@@ -123,7 +123,7 @@
 					<object class="IBUIImageView" id="548459623">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{48, 116}, {225, 141}}</string>
+						<string key="NSFrame">{{40, 105}, {240, 180}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="916126346"/>
@@ -174,6 +174,7 @@
 						<string key="NSFrame">{{85, 359}, {150, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -360,7 +361,6 @@
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="8.CustomClassName">PFImageView</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -372,14 +372,6 @@
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">PFImageView</string>
-					<string key="superclassName">UIImageView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PFImageView.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">StoreViewController</string>
 					<string key="superclassName">UIViewController</string>
@@ -403,7 +395,7 @@
 						<string key="callButton">UIButton</string>
 						<string key="mapButton">UIButton</string>
 						<string key="nameLabel">UILabel</string>
-						<string key="pictoImageView">PFImageView</string>
+						<string key="pictoImageView">UIImageView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="addressLabel1">
@@ -428,7 +420,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="pictoImageView">
 							<string key="name">pictoImageView</string>
-							<string key="candidateClassName">PFImageView</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

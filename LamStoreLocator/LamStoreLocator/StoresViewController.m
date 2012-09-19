@@ -9,8 +9,10 @@
 #import "StoresViewController.h"
 #import "StoreTableViewCell.h"
 #import "StoreViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import <Parse/Parse.h>
+
 
 @interface StoresViewController ()
 @end
@@ -51,9 +53,9 @@
 - (void)viewDidLoad
 {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-		[self.storesTableView registerNib:[UINib nibWithNibName:@"StoreTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"MyIdentifier"];
+		[self.storesTableView registerNib:[UINib nibWithNibName:@"StoreTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"storesCellIdentifier"];
 	} else {
-		[self.storesTableView registerNib:[UINib nibWithNibName:@"StoreTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"MyIdentifier"];
+		[self.storesTableView registerNib:[UINib nibWithNibName:@"StoreTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"storesCellIdentifier"];
 	}
 
     [super viewDidLoad];
@@ -81,7 +83,7 @@
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 		return 75;
 	} else {
-		return 100;
+		return 120;
 	}
 }
 
@@ -92,21 +94,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *cellIdentifier = @"MyIdentifier";
+	static NSString *cellIdentifier = @"storesCellIdentifier";
 	
 	StoreTableViewCell *cell = (StoreTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	cell.nameLabel.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:@"name"];
-	cell.phoneLabel.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:@"phone"];
-	cell.adressLabel1.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:@"addLine1"];
-	cell.adressLabel2.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:@"addLine2"];
+	cell.nameLabel.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kNameKey];
+	cell.phoneLabel.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kPhoneKey];
+	cell.adressLabel1.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kAddLine1Key];
+	cell.adressLabel2.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kAddLine2Key];
 	
-	PFFile *pictoFile = [[self.stores objectAtIndex:indexPath.row] valueForKey:@"picto"];
-	if (nil == cell.pictoImageView) {
-		cell.pictoImageView = [[PFImageView alloc] init];
-	}
-	[cell.pictoImageView setFile:pictoFile];
-	[cell.pictoImageView loadInBackground];
-	
+	PFFile *pictoFile = [[self.stores objectAtIndex:indexPath.row] valueForKey:kPictoKey];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[pictoFile url]] placeholderImage:[UIImage imageNamed:kPlaceholderCellFileName]];
 	return cell;
 }
 

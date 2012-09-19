@@ -8,6 +8,10 @@
 
 #import "StoreViewController.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <Parse/Parse.h>
+
+
 @interface StoreViewController ()
 
 @end
@@ -54,11 +58,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	self.nameLabel.text = [self.store valueForKey:@"name"];
-	self.addressLabel1.text = [self.store valueForKey:@"addLine1"];
-	self.addressLabel2.text = [self.store valueForKey:@"addLine2"];
-	[self.pictoImageView setFile:[self.store valueForKey:@"picto" ]];
-	[self.pictoImageView loadInBackground];
+	self.nameLabel.text = [self.store valueForKey:kNameKey];
+	self.addressLabel1.text = [self.store valueForKey:kAddLine1Key];
+	self.addressLabel2.text = [self.store valueForKey:kAddLine2Key];
+	PFFile *picto = [self.store valueForKey:kPictoKey];
+	[self.pictoImageView setImageWithURL:[NSURL URLWithString:[picto url]] placeholderImage:[UIImage imageNamed:kPlaceholderFileName]];
 }
 
 - (void)viewDidUnload
@@ -84,7 +88,7 @@
 
 - (IBAction)showOnMap
 {
-	NSURL *myURL = [NSURL URLWithString:[[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@ %@, %@", [self.store valueForKey:@"addLine1"], [self.store valueForKey:@"addLine2"], [self.store valueForKey:@"CountryName"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSURL *myURL = [NSURL URLWithString:[[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@ %@, %@", [self.store valueForKey:kAddLine1Key], [self.store valueForKey:kAddLine2Key], [self.store valueForKey:@"CountryName"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	[[UIApplication sharedApplication] openURL:myURL];
 }
 
@@ -93,7 +97,7 @@
 
 - (IBAction)callTheStore
 {
-	NSString *phoneNumber = [@"telprompt:" stringByAppendingString:[[self.store valueForKey:@"phone"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *phoneNumber = [@"telprompt:" stringByAppendingString:[[self.store valueForKey:kPhoneKey] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 @end

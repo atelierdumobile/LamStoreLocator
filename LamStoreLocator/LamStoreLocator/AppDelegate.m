@@ -13,10 +13,13 @@
 
 @implementation AppDelegate
 
+
+#pragma mark - Application Life Cycle
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	//Parse init
-	[Parse setApplicationId:kParseIDApplication clientKey:kParseClientKey];
+	[Parse setApplicationId:kIDApplication clientKey:kClientKey];
 		
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

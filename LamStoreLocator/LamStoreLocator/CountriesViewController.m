@@ -11,6 +11,7 @@
 
 #import <Parse/Parse.h>
 
+
 @interface CountriesViewController ()
 
 @property (nonatomic, strong) NSArray *stores;
@@ -44,8 +45,8 @@
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	
-	PFQuery *query = [PFQuery queryWithClassName:@"Stores"];
-	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	PFQuery *query = [PFQuery queryWithClassName:kClassName];
+	[query setCachePolicy:kCachePolicy];
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error) {
@@ -53,10 +54,10 @@
 			NSLog(@"Successfully retrieved %d stores.", objects.count);
 			
 			self.stores = [NSArray arrayWithArray:objects];
-			self.countries = [self.stores valueForKeyPath:@"@distinctUnionOfObjects.Country"];
+			self.countries = [self.stores valueForKeyPath:[NSString stringWithFormat:@"@distinctUnionOfObjects.%@", kCountryKey]];
 			
 			for (NSArray *store in self.stores) {
-				NSString *countryCode = [store valueForKey:@"Country"];
+				NSString *countryCode = [store valueForKey:kCountryKey];
 				[store setValue:[self countryNameWithCode:countryCode] forKey:@"CountryName"];
 			}
 			
@@ -118,7 +119,6 @@
 		countryCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
 	}
 	
-	
 	NSString *countryCode = [self.countries objectAtIndex:indexPath.row];
 	countryCell.textLabel.text = [self countryNameWithCode:countryCode];
 	
@@ -141,7 +141,8 @@
 	
 	StoresViewController *storesViewController = [[StoresViewController alloc] init];
 	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Country like %@", [self.countries objectAtIndex:indexPath.row]];
+	NSString *predicateString = [NSString stringWithFormat:@"%@ like \"%@\"", kCountryKey, [self.countries objectAtIndex:indexPath.row]];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString];
 	NSArray *filteredArray = [NSArray arrayWithArray:[self.stores filteredArrayUsingPredicate:predicate]];
 	
 	[storesViewController setStores:filteredArray];

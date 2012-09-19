@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
 @interface StoreTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet PFImageView *pictoImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *pictoImageView;
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *phoneLabel;
 @property (nonatomic, strong) IBOutlet UILabel *adressLabel1;

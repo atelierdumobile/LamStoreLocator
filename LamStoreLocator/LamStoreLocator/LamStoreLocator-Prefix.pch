@@ -15,5 +15,19 @@
 
 
 
-#define kParseIDApplication @"A9tC1DMT00dVUi7rPqEec8JCxt7vvFr62atRdVJb"
-#define kParseClientKey @"RsmfinS1p65nx7zBPtt5Jss9jRvgDpsA4YlIYwMf"
+#define kIDApplication @"A9tC1DMT00dVUi7rPqEec8JCxt7vvFr62atRdVJb"
+#define kClientKey @"RsmfinS1p65nx7zBPtt5Jss9jRvgDpsA4YlIYwMf"
+
+#define kClassName @"Stores"
+#define kNameKey @"name"
+#define kCountryKey @"Country"
+#define kPictoKey @"picto"
+#define kPhoneKey @"phone"
+#define kTypeKey @"type"
+#define kAddLine1Key @"addLine1"
+#define kAddLine2Key @"addLine2"
+
+#define kCachePolicy kPFCachePolicyCacheThenNetwork
+
+#define kPlaceholderFileName @"placeholder.png"
+#define kPlaceholderCellFileName @"placeholderCell.png"
