@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31157202160CA8BC0076BD58 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31157201160CA8BC0076BD58 /* CitiesViewController.m */; };
+		315E2081160CB46A001EF79B /* CitiesViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315E2080160CB469001EF79B /* CitiesViewController_iPhone.xib */; };
+		315E2083160CBFAC001EF79B /* CitiesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315E2082160CBFAC001EF79B /* CitiesViewController_iPad.xib */; };
+		3176A2DC160B459B0085703B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3176A2DB160B459B0085703B /* Default-568h@2x.png */; };
 		318EFDDF1602307B009AA82A /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318EFDDD1602307B009AA82A /* StoreViewController.m */; };
 		318EFDE01602307B009AA82A /* StoreViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318EFDDE1602307B009AA82A /* StoreViewController_iPhone.xib */; };
 		318EFDE9160379F4009AA82A /* StoreViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318EFDE8160379F3009AA82A /* StoreViewController_iPad.xib */; };
@@ -21,6 +25,15 @@
 		31D4EB941609D1350010E27E /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D4EB901609D1350010E27E /* placeholder@2x.png */; };
 		31D4EB951609D1350010E27E /* placeholder@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D4EB911609D1350010E27E /* placeholder@2x~ipad.png */; };
 		31D4EB961609D1350010E27E /* placeholder~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D4EB921609D1350010E27E /* placeholder~ipad.png */; };
+		31D4EB981609FA4B0010E27E /* StoresByCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4EB971609FA4B0010E27E /* StoresByCityViewController.m */; };
+		31F01C2E160A07850072B1A1 /* StoresByCityTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F01C2C160A07850072B1A1 /* StoresByCityTableViewCell_iPhone.xib */; };
+		31F01C32160A0A970072B1A1 /* StoresNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F01C30160A0A970072B1A1 /* StoresNearbyViewController.m */; };
+		31F01C33160A0A970072B1A1 /* StoresNearbyViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F01C31160A0A970072B1A1 /* StoresNearbyViewController_iPhone.xib */; };
+		31F01C35160A0D4B0072B1A1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F01C34160A0D4B0072B1A1 /* CoreLocation.framework */; };
+		31F01C37160A0D990072B1A1 /* StoresNearbyViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F01C36160A0D990072B1A1 /* StoresNearbyViewController_iPad.xib */; };
+		31F01C3A160A1AE40072B1A1 /* StoreAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F01C39160A1AE40072B1A1 /* StoreAnnotation.m */; };
+		31F01C3F160A28110072B1A1 /* bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F01C3E160A28110072B1A1 /* bottle.png */; };
+		31F01C44160A3A5A0072B1A1 /* StorePinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F01C43160A3A5A0072B1A1 /* StorePinAnnotationView.m */; };
 		31FE601515FF4456000BB153 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE601415FF4456000BB153 /* UIKit.framework */; };
 		31FE601715FF4456000BB153 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE601615FF4456000BB153 /* Foundation.framework */; };
 		31FE601915FF4456000BB153 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE601815FF4456000BB153 /* CoreGraphics.framework */; };
@@ -40,12 +53,10 @@
 		31FE604A15FF734E000BB153 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE604915FF734E000BB153 /* StoreKit.framework */; };
 		31FE604C15FF7355000BB153 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE604B15FF7355000BB153 /* SystemConfiguration.framework */; };
 		31FE605816009263000BB153 /* CountriesViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE605616009263000BB153 /* CountriesViewController_iPhone.xib */; };
-		31FE605B16009321000BB153 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE605A16009321000BB153 /* StoreTableViewCell.m */; };
-		31FE605E1600CB8C000BB153 /* StoreTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE60601600CB8C000BB153 /* StoreTableViewCell_iPhone.xib */; };
-		31FE60641600D08A000BB153 /* StoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE60621600D08A000BB153 /* StoresViewController.m */; };
-		31FE60651600D08A000BB153 /* StoresViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE60631600D08A000BB153 /* StoresViewController_iPhone.xib */; };
-		31FE60681600D12A000BB153 /* StoreTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE60661600D12A000BB153 /* StoreTableViewCell_iPad.xib */; };
-		31FE606B1600D212000BB153 /* StoresViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE60691600D212000BB153 /* StoresViewController_iPad.xib */; };
+		31FE605B16009321000BB153 /* StoresByCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE605A16009321000BB153 /* StoresByCityTableViewCell.m */; };
+		31FE60651600D08A000BB153 /* StoresByCityViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE60631600D08A000BB153 /* StoresByCityViewController_iPhone.xib */; };
+		31FE60681600D12A000BB153 /* StoresByCityTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE60661600D12A000BB153 /* StoresByCityTableViewCell_iPad.xib */; };
+		31FE606B1600D212000BB153 /* StoresByCityViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE60691600D212000BB153 /* StoresByCityViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +91,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31157200160CA8BC0076BD58 /* CitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesViewController.h; sourceTree = "<group>"; };
+		31157201160CA8BC0076BD58 /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
+		315E2080160CB469001EF79B /* CitiesViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesViewController_iPhone.xib; sourceTree = "<group>"; };
+		315E2082160CBFAC001EF79B /* CitiesViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesViewController_iPad.xib; sourceTree = "<group>"; };
+		3176A2DB160B459B0085703B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		318EFDDC1602307B009AA82A /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		318EFDDD1602307B009AA82A /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		318EFDDE1602307B009AA82A /* StoreViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -95,6 +111,18 @@
 		31D4EB901609D1350010E27E /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder@2x.png"; path = "Resources/Images/placeholder@2x.png"; sourceTree = "<group>"; };
 		31D4EB911609D1350010E27E /* placeholder@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder@2x~ipad.png"; path = "Resources/Images/placeholder@2x~ipad.png"; sourceTree = "<group>"; };
 		31D4EB921609D1350010E27E /* placeholder~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder~ipad.png"; path = "Resources/Images/placeholder~ipad.png"; sourceTree = "<group>"; };
+		31D4EB971609FA4B0010E27E /* StoresByCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoresByCityViewController.m; sourceTree = "<group>"; };
+		31F01C2D160A07850072B1A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/StoresByCityTableViewCell_iPhone.xib; sourceTree = "<group>"; };
+		31F01C2F160A0A970072B1A1 /* StoresNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoresNearbyViewController.h; sourceTree = "<group>"; };
+		31F01C30160A0A970072B1A1 /* StoresNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoresNearbyViewController.m; sourceTree = "<group>"; };
+		31F01C31160A0A970072B1A1 /* StoresNearbyViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoresNearbyViewController_iPhone.xib; sourceTree = "<group>"; };
+		31F01C34160A0D4B0072B1A1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		31F01C36160A0D990072B1A1 /* StoresNearbyViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoresNearbyViewController_iPad.xib; sourceTree = "<group>"; };
+		31F01C38160A1AE40072B1A1 /* StoreAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreAnnotation.h; sourceTree = "<group>"; };
+		31F01C39160A1AE40072B1A1 /* StoreAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreAnnotation.m; sourceTree = "<group>"; };
+		31F01C3E160A28110072B1A1 /* bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle.png; path = Resources/Images/bottle.png; sourceTree = "<group>"; };
+		31F01C40160A28510072B1A1 /* StorePinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePinAnnotationView.h; sourceTree = "<group>"; };
+		31F01C43160A3A5A0072B1A1 /* StorePinAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePinAnnotationView.m; sourceTree = "<group>"; };
 		31FE601015FF4456000BB153 /* LamStoreLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LamStoreLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FE601415FF4456000BB153 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		31FE601615FF4456000BB153 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,14 +147,12 @@
 		31FE604915FF734E000BB153 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		31FE604B15FF7355000BB153 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		31FE605716009263000BB153 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CountriesViewController_iPhone.xib; sourceTree = "<group>"; };
-		31FE605916009321000BB153 /* StoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreTableViewCell.h; sourceTree = "<group>"; };
-		31FE605A16009321000BB153 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableViewCell.m; sourceTree = "<group>"; };
-		31FE605F1600CB8C000BB153 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/StoreTableViewCell_iPhone.xib; sourceTree = "<group>"; };
-		31FE60611600D08A000BB153 /* StoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoresViewController.h; sourceTree = "<group>"; };
-		31FE60621600D08A000BB153 /* StoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoresViewController.m; sourceTree = "<group>"; };
-		31FE60631600D08A000BB153 /* StoresViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoresViewController_iPhone.xib; sourceTree = "<group>"; };
-		31FE60671600D12A000BB153 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = LamStoreLocator/en.lproj/StoreTableViewCell_iPad.xib; sourceTree = "<group>"; };
-		31FE606A1600D212000BB153 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/StoresViewController_iPad.xib; sourceTree = "<group>"; };
+		31FE605916009321000BB153 /* StoresByCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoresByCityTableViewCell.h; sourceTree = "<group>"; };
+		31FE605A16009321000BB153 /* StoresByCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoresByCityTableViewCell.m; sourceTree = "<group>"; };
+		31FE60611600D08A000BB153 /* StoresByCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoresByCityViewController.h; sourceTree = "<group>"; };
+		31FE60631600D08A000BB153 /* StoresByCityViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoresByCityViewController_iPhone.xib; sourceTree = "<group>"; };
+		31FE60671600D12A000BB153 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = LamStoreLocator/en.lproj/StoresByCityTableViewCell_iPad.xib; sourceTree = "<group>"; };
+		31FE606A1600D212000BB153 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/StoresByCityViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F01C35160A0D4B0072B1A1 /* CoreLocation.framework in Frameworks */,
 				31B4F7481608BB1200CA98CD /* ImageIO.framework in Frameworks */,
 				31B4F7461608B67100CA98CD /* MapKit.framework in Frameworks */,
 				31B4F7441608B66300CA98CD /* libSDWebImageARC.a in Frameworks */,
@@ -177,6 +204,7 @@
 		31D4EB7E1609CB470010E27E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				31F01C3E160A28110072B1A1 /* bottle.png */,
 				31D4EB8F1609D1350010E27E /* placeholder.png */,
 				31D4EB901609D1350010E27E /* placeholder@2x.png */,
 				31D4EB911609D1350010E27E /* placeholder@2x~ipad.png */,
@@ -192,6 +220,7 @@
 		31FE600515FF4455000BB153 = {
 			isa = PBXGroup;
 			children = (
+				3176A2DB160B459B0085703B /* Default-568h@2x.png */,
 				31FE601A15FF4456000BB153 /* LamStoreLocator */,
 				31FE601315FF4456000BB153 /* Frameworks */,
 				31FE601115FF4456000BB153 /* Products */,
@@ -210,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */,
+				31F01C34160A0D4B0072B1A1 /* CoreLocation.framework */,
 				31B4F7451608B67100CA98CD /* MapKit.framework */,
 				31FE604B15FF7355000BB153 /* SystemConfiguration.framework */,
 				31B4F7471608BB1200CA98CD /* ImageIO.framework */,
@@ -238,18 +268,30 @@
 				31FE602715FF4456000BB153 /* CountriesViewController.m */,
 				31FE605616009263000BB153 /* CountriesViewController_iPhone.xib */,
 				31FE602C15FF4456000BB153 /* CountriesViewController_iPad.xib */,
-				31FE60611600D08A000BB153 /* StoresViewController.h */,
-				31FE60621600D08A000BB153 /* StoresViewController.m */,
-				31FE60691600D212000BB153 /* StoresViewController_iPad.xib */,
-				31FE60631600D08A000BB153 /* StoresViewController_iPhone.xib */,
-				31FE605916009321000BB153 /* StoreTableViewCell.h */,
-				31FE605A16009321000BB153 /* StoreTableViewCell.m */,
-				31FE60601600CB8C000BB153 /* StoreTableViewCell_iPhone.xib */,
-				31FE60661600D12A000BB153 /* StoreTableViewCell_iPad.xib */,
+				31157200160CA8BC0076BD58 /* CitiesViewController.h */,
+				31157201160CA8BC0076BD58 /* CitiesViewController.m */,
+				315E2080160CB469001EF79B /* CitiesViewController_iPhone.xib */,
+				315E2082160CBFAC001EF79B /* CitiesViewController_iPad.xib */,
+				31FE60611600D08A000BB153 /* StoresByCityViewController.h */,
+				31D4EB971609FA4B0010E27E /* StoresByCityViewController.m */,
+				31FE60691600D212000BB153 /* StoresByCityViewController_iPad.xib */,
+				31FE60631600D08A000BB153 /* StoresByCityViewController_iPhone.xib */,
+				31FE605916009321000BB153 /* StoresByCityTableViewCell.h */,
+				31FE605A16009321000BB153 /* StoresByCityTableViewCell.m */,
+				31F01C2C160A07850072B1A1 /* StoresByCityTableViewCell_iPhone.xib */,
+				31FE60661600D12A000BB153 /* StoresByCityTableViewCell_iPad.xib */,
+				31F01C2F160A0A970072B1A1 /* StoresNearbyViewController.h */,
+				31F01C30160A0A970072B1A1 /* StoresNearbyViewController.m */,
+				31F01C31160A0A970072B1A1 /* StoresNearbyViewController_iPhone.xib */,
+				31F01C36160A0D990072B1A1 /* StoresNearbyViewController_iPad.xib */,
 				318EFDDC1602307B009AA82A /* StoreViewController.h */,
 				318EFDDD1602307B009AA82A /* StoreViewController.m */,
 				318EFDDE1602307B009AA82A /* StoreViewController_iPhone.xib */,
 				318EFDE8160379F3009AA82A /* StoreViewController_iPad.xib */,
+				31F01C38160A1AE40072B1A1 /* StoreAnnotation.h */,
+				31F01C39160A1AE40072B1A1 /* StoreAnnotation.m */,
+				31F01C40160A28510072B1A1 /* StorePinAnnotationView.h */,
+				31F01C43160A3A5A0072B1A1 /* StorePinAnnotationView.m */,
 				31D4EB7D1609CB420010E27E /* Resources */,
 				31FE601B15FF4456000BB153 /* Supporting Files */,
 			);
@@ -352,10 +394,9 @@
 				31FE601F15FF4456000BB153 /* InfoPlist.strings in Resources */,
 				31FE602E15FF4456000BB153 /* CountriesViewController_iPad.xib in Resources */,
 				31FE605816009263000BB153 /* CountriesViewController_iPhone.xib in Resources */,
-				31FE605E1600CB8C000BB153 /* StoreTableViewCell_iPhone.xib in Resources */,
-				31FE60651600D08A000BB153 /* StoresViewController_iPhone.xib in Resources */,
-				31FE60681600D12A000BB153 /* StoreTableViewCell_iPad.xib in Resources */,
-				31FE606B1600D212000BB153 /* StoresViewController_iPad.xib in Resources */,
+				31FE60651600D08A000BB153 /* StoresByCityViewController_iPhone.xib in Resources */,
+				31FE60681600D12A000BB153 /* StoresByCityTableViewCell_iPad.xib in Resources */,
+				31FE606B1600D212000BB153 /* StoresByCityViewController_iPad.xib in Resources */,
 				318EFDE01602307B009AA82A /* StoreViewController_iPhone.xib in Resources */,
 				318EFDE9160379F4009AA82A /* StoreViewController_iPad.xib in Resources */,
 				31D4EB8B1609D07B0010E27E /* placeholderCell.png in Resources */,
@@ -366,6 +407,13 @@
 				31D4EB941609D1350010E27E /* placeholder@2x.png in Resources */,
 				31D4EB951609D1350010E27E /* placeholder@2x~ipad.png in Resources */,
 				31D4EB961609D1350010E27E /* placeholder~ipad.png in Resources */,
+				31F01C2E160A07850072B1A1 /* StoresByCityTableViewCell_iPhone.xib in Resources */,
+				31F01C33160A0A970072B1A1 /* StoresNearbyViewController_iPhone.xib in Resources */,
+				31F01C37160A0D990072B1A1 /* StoresNearbyViewController_iPad.xib in Resources */,
+				31F01C3F160A28110072B1A1 /* bottle.png in Resources */,
+				3176A2DC160B459B0085703B /* Default-568h@2x.png in Resources */,
+				315E2081160CB46A001EF79B /* CitiesViewController_iPhone.xib in Resources */,
+				315E2083160CBFAC001EF79B /* CitiesViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,9 +427,13 @@
 				31FE602115FF4456000BB153 /* main.m in Sources */,
 				31FE602515FF4456000BB153 /* AppDelegate.m in Sources */,
 				31FE602815FF4456000BB153 /* CountriesViewController.m in Sources */,
-				31FE605B16009321000BB153 /* StoreTableViewCell.m in Sources */,
-				31FE60641600D08A000BB153 /* StoresViewController.m in Sources */,
+				31FE605B16009321000BB153 /* StoresByCityTableViewCell.m in Sources */,
 				318EFDDF1602307B009AA82A /* StoreViewController.m in Sources */,
+				31D4EB981609FA4B0010E27E /* StoresByCityViewController.m in Sources */,
+				31F01C32160A0A970072B1A1 /* StoresNearbyViewController.m in Sources */,
+				31F01C3A160A1AE40072B1A1 /* StoreAnnotation.m in Sources */,
+				31F01C44160A3A5A0072B1A1 /* StorePinAnnotationView.m in Sources */,
+				31157202160CA8BC0076BD58 /* CitiesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +448,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		31F01C2C160A07850072B1A1 /* StoresByCityTableViewCell_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31F01C2D160A07850072B1A1 /* en */,
+			);
+			name = StoresByCityTableViewCell_iPhone.xib;
+			sourceTree = "<group>";
+		};
 		31FE601D15FF4456000BB153 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -420,29 +480,21 @@
 			name = CountriesViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		31FE60601600CB8C000BB153 /* StoreTableViewCell_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31FE605F1600CB8C000BB153 /* en */,
-			);
-			name = StoreTableViewCell_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		31FE60661600D12A000BB153 /* StoreTableViewCell_iPad.xib */ = {
+		31FE60661600D12A000BB153 /* StoresByCityTableViewCell_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				31FE60671600D12A000BB153 /* en */,
 			);
-			name = StoreTableViewCell_iPad.xib;
+			name = StoresByCityTableViewCell_iPad.xib;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		31FE60691600D212000BB153 /* StoresViewController_iPad.xib */ = {
+		31FE60691600D212000BB153 /* StoresByCityViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				31FE606A1600D212000BB153 /* en */,
 			);
-			name = StoresViewController_iPad.xib;
+			name = StoresByCityViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -513,8 +565,10 @@
 					"”$(OBJROOT)/UninstalledProducts/include”/**",
 				);
 				INFOPLIST_FILE = "LamStoreLocator/LamStoreLocator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -533,8 +587,10 @@
 					"”$(OBJROOT)/UninstalledProducts/include”/**",
 				);
 				INFOPLIST_FILE = "LamStoreLocator/LamStoreLocator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

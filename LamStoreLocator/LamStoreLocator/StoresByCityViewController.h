@@ -1,5 +1,5 @@
 //
-//  StoresViewController.h
+//  StoresByCityViewController.h
 //  LamStoreLocator
 //
 //  Created by benjamin payen on 12/09/12.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StoresViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface StoresByCityViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *storesTableView;
+@property (weak, nonatomic) IBOutlet UITableView *storesByCityTableView;
 @property (nonatomic, strong) NSArray *stores;
 
 @end

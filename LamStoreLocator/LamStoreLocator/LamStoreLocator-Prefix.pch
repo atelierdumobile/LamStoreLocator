@@ -19,15 +19,21 @@
 #define kClientKey @"RsmfinS1p65nx7zBPtt5Jss9jRvgDpsA4YlIYwMf"
 
 #define kClassName @"Stores"
+
 #define kNameKey @"name"
 #define kCountryKey @"Country"
+#define kCityKey @"city"
 #define kPictoKey @"picto"
 #define kPhoneKey @"phone"
 #define kTypeKey @"type"
 #define kAddLine1Key @"addLine1"
 #define kAddLine2Key @"addLine2"
+#define kGeolocKey @"geoloc"
 
 #define kCachePolicy kPFCachePolicyCacheThenNetwork
+
+#define kMaximumDistanceInKm 20.0
+#define kMaxStoresNearbyToReturn 10
 
 #define kPlaceholderFileName @"placeholder.png"
 #define kPlaceholderCellFileName @"placeholderCell.png"

@@ -1,25 +1,25 @@
 //
-//  StoresViewController.m
+//  StoresByCityViewController.m
 //  LamStoreLocator
 //
 //  Created by benjamin payen on 12/09/12.
 //  Copyright (c) 2012 L'atelier du mobile. All rights reserved.
 //
 
-#import "StoresViewController.h"
-#import "StoreTableViewCell.h"
+#import "StoresByCityViewController.h"
+#import "StoresByCityTableViewCell.h"
 #import "StoreViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import <Parse/Parse.h>
 
 
-@interface StoresViewController ()
+@interface StoresByCityViewController ()
 @end
 
-@implementation StoresViewController
+@implementation StoresByCityViewController
 
-@synthesize storesTableView = _storesTableView;
+@synthesize storesByCityTableView = _storesByCityTableView;
 
 
 #pragma mark - Init
@@ -28,10 +28,10 @@
 {
 	if (self) {
 		if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-			self = [self initWithNibName:@"StoresViewController_iPhone" bundle:nil];
+			self = [self initWithNibName:@"StoresByCityViewController_iPhone" bundle:nil];
 		}
 		else {
-			self = [self initWithNibName:@"StoresViewController_iPad" bundle:nil];
+			self = [self initWithNibName:@"StoresByCityViewController_iPad" bundle:nil];
 		}
 	}
 	return self;
@@ -53,9 +53,10 @@
 - (void)viewDidLoad
 {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-		[self.storesTableView registerNib:[UINib nibWithNibName:@"StoreTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"storesCellIdentifier"];
-	} else {
-		[self.storesTableView registerNib:[UINib nibWithNibName:@"StoreTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"storesCellIdentifier"];
+		[self.storesByCityTableView registerNib:[UINib nibWithNibName:@"StoresByCityTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"storesCellIdentifier"];
+	}
+	else {
+		[self.storesByCityTableView registerNib:[UINib nibWithNibName:@"StoresByCityTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"storesCellIdentifier"];
 	}
 
     [super viewDidLoad];
@@ -64,7 +65,7 @@
 
 - (void)viewDidUnload
 {
-	[self setStoresTableView:nil];
+	[self setStoresByCityTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -96,12 +97,14 @@
 {
 	static NSString *cellIdentifier = @"storesCellIdentifier";
 	
-	StoreTableViewCell *cell = (StoreTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	StoresByCityTableViewCell *cell = (StoresByCityTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+	
 	cell.nameLabel.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kNameKey];
 	cell.phoneLabel.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kPhoneKey];
 	cell.adressLabel1.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kAddLine1Key];
 	cell.adressLabel2.text = [[self.stores objectAtIndex:indexPath.row] valueForKeyPath:kAddLine2Key];
-	
+		
 	PFFile *pictoFile = [[self.stores objectAtIndex:indexPath.row] valueForKey:kPictoKey];
     [cell.imageView setImageWithURL:[NSURL URLWithString:[pictoFile url]] placeholderImage:[UIImage imageNamed:kPlaceholderCellFileName]];
 	return cell;

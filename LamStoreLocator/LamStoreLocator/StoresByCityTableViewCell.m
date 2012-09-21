@@ -1,15 +1,15 @@
 //
-//  StoreTableViewCell.m
+//  StoresByCityTableViewCell.m
 //  LamStoreLocator
 //
 //  Created by benjamin payen on 12/09/12.
 //  Copyright (c) 2012 L'atelier du mobile. All rights reserved.
 //
 
-#import "StoreTableViewCell.h"
+#import "StoresByCityTableViewCell.h"
 
 
-@implementation StoreTableViewCell
+@implementation StoresByCityTableViewCell
 
 @synthesize pictoImageView = _pictoImageView;
 @synthesize nameLabel = _nameLabel;

@@ -7,7 +7,8 @@
 //
 
 #import "CountriesViewController.h"
-#import "StoresViewController.h"
+#import "CitiesViewController.h"
+#import "StoresNearbyViewController.h"
 
 #import <Parse/Parse.h>
 
@@ -24,6 +25,7 @@
 @synthesize countriesTableView = _countriesTableView;
 @synthesize stores = _stores;
 @synthesize countries = _countries;
+@synthesize refreshControl = _refreshControl;
 
 
 #pragma mark - Init
@@ -44,33 +46,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	
-	PFQuery *query = [PFQuery queryWithClassName:kClassName];
-	[query setCachePolicy:kCachePolicy];
-	
-	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-		if (!error) {
-			// The find succeeded.
-			NSLog(@"Successfully retrieved %d stores.", objects.count);
-			
-			self.stores = [NSArray arrayWithArray:objects];
-			self.countries = [self.stores valueForKeyPath:[NSString stringWithFormat:@"@distinctUnionOfObjects.%@", kCountryKey]];
-			
-			for (NSArray *store in self.stores) {
-				NSString *countryCode = [store valueForKey:kCountryKey];
-				[store setValue:[self countryNameWithCode:countryCode] forKey:@"CountryName"];
-			}
-			
-			//Debug
-			[self.stores writeToFile:@"/plist/initialData.plist" atomically:YES];
-
-			[self.countriesTableView reloadData];
-			
-		} else {
-			// Log details of the failure
-			NSLog(@"Error: %@ %@", error, [error userInfo]);
-		}
-	}];
+	[self downloadData];
 	return self;
 }
 
@@ -80,14 +56,23 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+	self.refreshControl = [[UIRefreshControl alloc] init];
+	
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+//	[attributes setObject:[UIColor blueColor] forKey:NSBackgroundColorAttributeName];
+//	[attributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+	NSAttributedString *title = [[NSAttributedString alloc] initWithString:@"Chargement des données en cours" attributes:attributes];
+	self.refreshControl.attributedTitle = title;
+	
+	[self.refreshControl addTarget:self action:@selector(downloadData) forControlEvents:UIControlEventValueChanged];
+	[self.countriesTableView addSubview:self.refreshControl];
 }
 
 - (void)viewDidUnload
 {
 	[self setCountriesTableView:nil];
 	[super viewDidUnload];
-	// Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -96,34 +81,43 @@
 }
 
 
-#pragma mark - UITableViewDataSource methods
+#pragma mark - Data downloading
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)downloadData
 {
-	return 60;
+	PFQuery *query = [PFQuery queryWithClassName:kClassName];
+	[query setCachePolicy:kCachePolicy];
+	
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		
+		if (!error) {
+			// The find succeeded.
+			NSLog(@"Successfully retrieved %d stores.", objects.count);
+			
+			self.stores = [NSArray arrayWithArray:objects];
+			self.countries = [self.stores valueForKeyPath:[NSString stringWithFormat:@"@distinctUnionOfObjects.%@", kCountryKey]];
+			
+			for (NSArray *store in self.stores) {
+				NSString *countryCode = [store valueForKey:kCountryKey];
+				[store setValue:[self countryNameWithCode:countryCode] forKey:@"countryName"];
+			}
+			
+			//Debug
+			[self.stores writeToFile:@"/plist/initialData.plist" atomically:YES];
+			
+			[self.countriesTableView reloadData];
+		}
+		else {
+			// Log details of the failure
+			NSLog(@"Error: %@ %@", error, [error userInfo]);
+		}
+
+		[self.refreshControl endRefreshing];
+	}];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	
-	return [self.countries count];
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	static NSString *cellIdentifier = @"countriesCellIdentifier";
-	
-	UITableViewCell *countryCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	
-	if (countryCell == nil) {
-		countryCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-	}
-	
-	NSString *countryCode = [self.countries objectAtIndex:indexPath.row];
-	countryCell.textLabel.text = [self countryNameWithCode:countryCode];
-	
-	return countryCell;
-}
+#pragma mark - Data management
 
 - (NSString *)countryNameWithCode:(NSString *)countryCode
 {
@@ -133,20 +127,70 @@
 }
 
 
+#pragma mark - UITableViewDataSource methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 60;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	if (section == 0) {
+		return 1;
+	}
+	else {
+		return [self.countries count];
+	}
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *cellIdentifier = @"cellIdentifier";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+	}
+	
+	if (indexPath.section == 0) {
+		cell.textLabel.text = @"Stores à proximité";
+	}
+	else {
+		NSString *countryCode = [self.countries objectAtIndex:indexPath.row];
+		cell.textLabel.text = [self countryNameWithCode:countryCode];
+	}
+	return cell;
+}
+
+
 #pragma mark - UITableViewDelegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	StoresViewController *storesViewController = [[StoresViewController alloc] init];
+	if (indexPath.section == 0) {
+		StoresNearbyViewController *storesNearbyViewController = [[StoresNearbyViewController alloc] init];
+		[self.navigationController pushViewController:storesNearbyViewController animated:YES];
+	}
+	else {
+		CitiesViewController *citiesViewController = [[CitiesViewController alloc] init];
+		
+		NSString *predicateString = [NSString stringWithFormat:@"%@ like \"%@\"", kCountryKey, [self.countries objectAtIndex:indexPath.row]];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString];
+		NSArray *filteredArray = [NSArray arrayWithArray:[self.stores filteredArrayUsingPredicate:predicate]];
+		[citiesViewController setStores:filteredArray];
 	
-	NSString *predicateString = [NSString stringWithFormat:@"%@ like \"%@\"", kCountryKey, [self.countries objectAtIndex:indexPath.row]];
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString];
-	NSArray *filteredArray = [NSArray arrayWithArray:[self.stores filteredArrayUsingPredicate:predicate]];
-	
-	[storesViewController setStores:filteredArray];
-	[self.navigationController pushViewController:storesViewController animated:YES];
+		[citiesViewController setTitle:[self countryNameWithCode:[self.countries objectAtIndex:indexPath.row]]];
+		[self.navigationController pushViewController:citiesViewController animated:YES];
+	}
 }
 
 

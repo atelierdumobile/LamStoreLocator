@@ -88,7 +88,15 @@
 
 - (IBAction)showOnMap
 {
-	NSURL *myURL = [NSURL URLWithString:[[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@ %@, %@", [self.store valueForKey:kAddLine1Key], [self.store valueForKey:kAddLine2Key], [self.store valueForKey:@"CountryName"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *mapsURLScheme = @"";
+	if ([[UIDevice currentDevice].systemVersion floatValue] >= 6.0) {
+		mapsURLScheme = @"http://maps.apple.com/maps";
+	}
+	else {
+		mapsURLScheme = @"http://maps.google.com/maps";
+	}
+	
+	NSURL *myURL = [NSURL URLWithString:[[NSString stringWithFormat:@"%@?q=%@ %@, %@", mapsURLScheme, [self.store valueForKey:kAddLine1Key], [self.store valueForKey:kAddLine2Key], [self.store valueForKey:@"countryName"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	[[UIApplication sharedApplication] openURL:myURL];
 }
 

@@ -11,5 +11,6 @@
 @interface CountriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *countriesTableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
