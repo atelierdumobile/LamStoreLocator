@@ -59,10 +59,18 @@
     // Do any additional setup after loading the view from its nib.
 	
 	self.nameLabel.text = [self.store valueForKey:kNameKey];
-	self.addressLabel1.text = [self.store valueForKey:kAddLine1Key];
-	self.addressLabel2.text = [self.store valueForKey:kAddLine2Key];
+	self.addressLabel1.text = [self addressLine1];
+	self.addressLabel2.text = [self addressLine2];
 	PFFile *picto = [self.store valueForKey:kPictoKey];
 	[self.pictoImageView setImageWithURL:[NSURL URLWithString:[picto url]] placeholderImage:[UIImage imageNamed:kPlaceholderFileName]];
+	
+	if (![self addressLine1] || [[self addressLine1] isEqualToString:@""] || ![self addressLine2] || [[self addressLine2] isEqualToString:@""]) {
+		[self.mapButton setHidden:YES];
+	}
+	
+	if (![self phoneNumber] || [[self phoneNumber] isEqualToString:@""]) {
+		[self.callButton setHidden:YES];
+	}	
 }
 
 - (void)viewDidUnload
@@ -84,10 +92,42 @@
 }
 
 
+#pragma mark - Data management
+
+- (NSString *)addressLine1
+{
+	return [self.store valueForKey:kAddLine1Key];
+}
+
+
+- (NSString *)addressLine2
+{
+	return [self.store valueForKey:kAddLine2Key];
+}
+
+
+- (NSString *)country
+{
+	return [self.store valueForKey:@"countryName"];
+}
+
+- (NSString *)address
+{
+	return [[NSString stringWithFormat:@"%@ %@, %@", [self addressLine1], [self addressLine2], [self country]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)phoneNumber
+{
+	return [[self.store valueForKey:kPhoneKey] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
+
 #pragma mark - Store Localization
 
 - (IBAction)showOnMap
 {
+	NSString *address = [[NSString stringWithFormat:@"%@ %@, %@", [self.store valueForKey:kAddLine1Key], [self.store valueForKey:kAddLine2Key], [self.store valueForKey:@"countryName"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	
 	NSString *mapsURLScheme = @"";
 	if ([[UIDevice currentDevice].systemVersion floatValue] >= 6.0) {
 		mapsURLScheme = @"http://maps.apple.com/maps";
@@ -96,7 +136,7 @@
 		mapsURLScheme = @"http://maps.google.com/maps";
 	}
 	
-	NSURL *myURL = [NSURL URLWithString:[[NSString stringWithFormat:@"%@?q=%@ %@, %@", mapsURLScheme, [self.store valueForKey:kAddLine1Key], [self.store valueForKey:kAddLine2Key], [self.store valueForKey:@"countryName"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?q=%@", mapsURLScheme, address]];
 	[[UIApplication sharedApplication] openURL:myURL];
 }
 
@@ -105,7 +145,9 @@
 
 - (IBAction)callTheStore
 {
-	NSString *phoneNumber = [@"telprompt:" stringByAppendingString:[[self.store valueForKey:kPhoneKey] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+	if ([self.store valueForKey:kPhoneKey] && [self.store valueForKey:kPhoneKey] != @"") {
+		NSString *phoneNumber = [@"telprompt:" stringByAppendingString:[[self.store valueForKey:kPhoneKey] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+	}
 }
 @end

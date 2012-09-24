@@ -95,7 +95,7 @@
 		31157201160CA8BC0076BD58 /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
 		315E2080160CB469001EF79B /* CitiesViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesViewController_iPhone.xib; sourceTree = "<group>"; };
 		315E2082160CBFAC001EF79B /* CitiesViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesViewController_iPad.xib; sourceTree = "<group>"; };
-		3176A2DB160B459B0085703B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3176A2DB160B459B0085703B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		318EFDDC1602307B009AA82A /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		318EFDDD1602307B009AA82A /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		318EFDDE1602307B009AA82A /* StoreViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 		31D4EB7E1609CB470010E27E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3176A2DB160B459B0085703B /* Default-568h@2x.png */,
 				31F01C3E160A28110072B1A1 /* bottle.png */,
 				31D4EB8F1609D1350010E27E /* placeholder.png */,
 				31D4EB901609D1350010E27E /* placeholder@2x.png */,
@@ -220,7 +221,6 @@
 		31FE600515FF4455000BB153 = {
 			isa = PBXGroup;
 			children = (
-				3176A2DB160B459B0085703B /* Default-568h@2x.png */,
 				31FE601A15FF4456000BB153 /* LamStoreLocator */,
 				31FE601315FF4456000BB153 /* Frameworks */,
 				31FE601115FF4456000BB153 /* Products */,

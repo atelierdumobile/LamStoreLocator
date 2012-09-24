@@ -160,7 +160,7 @@
 	}
 	
 	if (indexPath.section == 0) {
-		cell.textLabel.text = @"Stores à proximité";
+		cell.textLabel.text = NSLocalizedString(@"Stores nearby", @"Stores Nearby");
 	}
 	else {
 		NSString *countryCode = [self.countries objectAtIndex:indexPath.row];
@@ -178,6 +178,7 @@
 	
 	if (indexPath.section == 0) {
 		StoresNearbyViewController *storesNearbyViewController = [[StoresNearbyViewController alloc] init];
+		[storesNearbyViewController setTitle:NSLocalizedString(@"Stores nearby", @"Stores Nearby")];
 		[self.navigationController pushViewController:storesNearbyViewController animated:YES];
 	}
 	else {
