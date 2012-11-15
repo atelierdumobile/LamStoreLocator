@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/mathieu/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.SDWebImage-2.7.docset
+Time: 2012-11-15 15:26:18 +0000
