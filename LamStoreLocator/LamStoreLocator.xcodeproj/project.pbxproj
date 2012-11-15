@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		31157202160CA8BC0076BD58 /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31157201160CA8BC0076BD58 /* CitiesViewController.m */; };
+		3155BB401655351300C6AA8D /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3155BB371655349900C6AA8D /* libSDWebImage.a */; };
 		315E2081160CB46A001EF79B /* CitiesViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315E2080160CB469001EF79B /* CitiesViewController_iPhone.xib */; };
 		315E2083160CBFAC001EF79B /* CitiesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315E2082160CBFAC001EF79B /* CitiesViewController_iPad.xib */; };
 		3176A2DC160B459B0085703B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3176A2DB160B459B0085703B /* Default-568h@2x.png */; };
 		318EFDDF1602307B009AA82A /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318EFDDD1602307B009AA82A /* StoreViewController.m */; };
 		318EFDE01602307B009AA82A /* StoreViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318EFDDE1602307B009AA82A /* StoreViewController_iPhone.xib */; };
 		318EFDE9160379F4009AA82A /* StoreViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318EFDE8160379F3009AA82A /* StoreViewController_iPad.xib */; };
-		31B4F7441608B66300CA98CD /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B4F73E1608B63000CA98CD /* libSDWebImageARC.a */; };
 		31B4F7461608B67100CA98CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B4F7451608B67100CA98CD /* MapKit.framework */; };
 		31B4F7481608BB1200CA98CD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B4F7471608BB1200CA98CD /* ImageIO.framework */; };
 		31D4EB8B1609D07B0010E27E /* placeholderCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D4EB871609D07B0010E27E /* placeholderCell.png */; };
@@ -60,33 +60,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		31B4F73B1608B63000CA98CD /* PBXContainerItemProxy */ = {
+		3155BB361655349900C6AA8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 53922D6F148C55820056699D;
 			remoteInfo = SDWebImage;
 		};
-		31B4F73D1608B63000CA98CD /* PBXContainerItemProxy */ = {
+		3155BB381655349900C6AA8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 53761325155AD0D5005750A4;
 			remoteInfo = "SDWebImage ARC";
 		};
-		31B4F73F1608B63000CA98CD /* PBXContainerItemProxy */ = {
+		3155BB3A1655349900C6AA8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 531041E0157EAFA400BBABC3;
 			remoteInfo = "SDWebImage ARC+MKAnnotation";
 		};
-		31B4F7421608B64100CA98CD /* PBXContainerItemProxy */ = {
+		3155BB3E165534FC00C6AA8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 53761307155AD0D5005750A4;
-			remoteInfo = "SDWebImage ARC";
+			remoteGlobalIDString = 53922D6E148C55810056699D;
+			remoteInfo = SDWebImage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -100,7 +100,7 @@
 		318EFDDD1602307B009AA82A /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		318EFDDE1602307B009AA82A /* StoreViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController_iPhone.xib; sourceTree = "<group>"; };
 		318EFDE8160379F3009AA82A /* StoreViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController_iPad.xib; sourceTree = "<group>"; };
-		31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = ../../../Ressources/OpenSource/SDWebImage/SDWebImage.xcodeproj; sourceTree = "<group>"; };
+		31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = SDWebImage/SDWebImage.xcodeproj; sourceTree = "<group>"; };
 		31B4F7451608B67100CA98CD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		31B4F7471608BB1200CA98CD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		31D4EB871609D07B0010E27E /* placeholderCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholderCell.png; path = Resources/Images/placeholderCell.png; sourceTree = "<group>"; };
@@ -160,10 +160,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3155BB401655351300C6AA8D /* libSDWebImage.a in Frameworks */,
 				31F01C35160A0D4B0072B1A1 /* CoreLocation.framework in Frameworks */,
 				31B4F7481608BB1200CA98CD /* ImageIO.framework in Frameworks */,
 				31B4F7461608B67100CA98CD /* MapKit.framework in Frameworks */,
-				31B4F7441608B66300CA98CD /* libSDWebImageARC.a in Frameworks */,
 				31FE604C15FF7355000BB153 /* SystemConfiguration.framework in Frameworks */,
 				31FE604A15FF734E000BB153 /* StoreKit.framework in Frameworks */,
 				31FE604815FF7348000BB153 /* Security.framework in Frameworks */,
@@ -183,12 +183,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		31B4F7331608B62F00CA98CD /* Products */ = {
+		3155BB311655349900C6AA8D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				31B4F73C1608B63000CA98CD /* libSDWebImage.a */,
-				31B4F73E1608B63000CA98CD /* libSDWebImageARC.a */,
-				31B4F7401608B63000CA98CD /* libSDWebImageARC+MKAnnotation.a */,
+				3155BB371655349900C6AA8D /* libSDWebImage.a */,
+				3155BB391655349900C6AA8D /* libSDWebImageARC.a */,
+				3155BB3B1655349900C6AA8D /* libSDWebImageARC+MKAnnotation.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				31B4F7431608B64100CA98CD /* PBXTargetDependency */,
+				3155BB3F165534FC00C6AA8D /* PBXTargetDependency */,
 			);
 			name = LamStoreLocator;
 			productName = LamStoreLocator;
@@ -351,7 +351,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 31B4F7331608B62F00CA98CD /* Products */;
+					ProductGroup = 3155BB311655349900C6AA8D /* Products */;
 					ProjectRef = 31B4F7321608B62F00CA98CD /* SDWebImage.xcodeproj */;
 				},
 			);
@@ -363,25 +363,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		31B4F73C1608B63000CA98CD /* libSDWebImage.a */ = {
+		3155BB371655349900C6AA8D /* libSDWebImage.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDWebImage.a;
-			remoteRef = 31B4F73B1608B63000CA98CD /* PBXContainerItemProxy */;
+			remoteRef = 3155BB361655349900C6AA8D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		31B4F73E1608B63000CA98CD /* libSDWebImageARC.a */ = {
+		3155BB391655349900C6AA8D /* libSDWebImageARC.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDWebImageARC.a;
-			remoteRef = 31B4F73D1608B63000CA98CD /* PBXContainerItemProxy */;
+			remoteRef = 3155BB381655349900C6AA8D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		31B4F7401608B63000CA98CD /* libSDWebImageARC+MKAnnotation.a */ = {
+		3155BB3B1655349900C6AA8D /* libSDWebImageARC+MKAnnotation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libSDWebImageARC+MKAnnotation.a";
-			remoteRef = 31B4F73F1608B63000CA98CD /* PBXContainerItemProxy */;
+			remoteRef = 3155BB3A1655349900C6AA8D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -440,10 +440,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		31B4F7431608B64100CA98CD /* PBXTargetDependency */ = {
+		3155BB3F165534FC00C6AA8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "SDWebImage ARC";
-			targetProxy = 31B4F7421608B64100CA98CD /* PBXContainerItemProxy */;
+			name = SDWebImage;
+			targetProxy = 3155BB3E165534FC00C6AA8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
